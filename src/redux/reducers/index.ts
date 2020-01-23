@@ -1,4 +1,4 @@
-import { IGlobalState, IAction, ITodo } from "../../types";
+import { IGlobalState, IAction, ITask } from "../../types";
 import {
   FETCH_START,
   FETCH_FAILED,
@@ -9,12 +9,12 @@ import {
 } from "../actions";
 
 const initialState: IGlobalState = {
-  todos: [],
+  tasks: [],
   isLoading: false,
   error: null
 };
 
-const todos = (
+export const Tasks = (
   prevState: IGlobalState = initialState,
   action: IAction
 ): IGlobalState => {
@@ -22,7 +22,7 @@ const todos = (
 
   switch (action.type) {
     case FETCH_START:
-      state = { ...state, isLoading: true, error: null, todos: [] };
+      state = { ...state, isLoading: true, error: null, tasks: [] };
       break;
 
     case FETCH_FAILED:
@@ -30,7 +30,7 @@ const todos = (
         ...state,
         isLoading: false,
         error: action.payload,
-        todos: []
+        tasks: []
       };
       break;
 
@@ -38,7 +38,7 @@ const todos = (
       state = {
         ...state,
         isLoading: false,
-        todos: action.payload
+        tasks: action.payload
       };
       break;
 
@@ -46,18 +46,18 @@ const todos = (
       state = {
         ...state,
         isLoading: false,
-        todos: [...state.todos, action.payload]
+        tasks: [...state.tasks, action.payload]
       };
       break;
     }
 
     case UPDATE_TODO: {
-      const todo = action.payload as ITodo;
+      const task = action.payload as ITask;
 
       state = {
         ...state,
         isLoading: false,
-        todos: state.todos.map(item => (todo.id === item.id ? todo : item))
+        tasks: state.tasks.map(item => (task.id === item.id ? task : item))
       };
       break;
     }
@@ -66,7 +66,7 @@ const todos = (
       state = {
         ...state,
         isLoading: false,
-        todos: state.todos.filter(item => item.id !== action.payload)
+        tasks: state.tasks.filter(item => item.id !== action.payload)
       };
       break;
     }
@@ -77,5 +77,3 @@ const todos = (
 
   return state;
 };
-
-export default todos;

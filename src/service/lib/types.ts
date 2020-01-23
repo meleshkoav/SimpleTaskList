@@ -1,4 +1,4 @@
-import { ITodo } from "../../types";
+import { ITask } from "../../types";
 
 export interface IResponseBody {
   success: boolean;
@@ -6,10 +6,10 @@ export interface IResponseBody {
 }
 
 export interface IGetListResponseBody extends IResponseBody {
-  data: ITodo[];
+  data: ITask[];
   length: number;
 }
 
-export interface ICreateTodoResponseBody extends IResponseBody {
+export interface ICreateTaskResponseBody extends IResponseBody {
   id: number;
 }

@@ -1,4 +1,4 @@
-export interface ITodo {
+export interface ITask {
   id: number;
   title: string;
 }
@@ -9,7 +9,7 @@ export interface IAction<TPayload = any> {
 }
 
 export interface IGlobalState {
-  todos: ITodo[];
+  tasks: ITask[];
   isLoading: boolean;
   error: string | null;
 }

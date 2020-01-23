@@ -1,15 +1,15 @@
 import { baseUrl } from "../config";
-import { ITodo } from "../types";
+import { ITask } from "../types";
 import {
   IResponseBody,
   IGetListResponseBody,
-  ICreateTodoResponseBody
+  ICreateTaskResponseBody
 } from "./lib/types";
 import { checkSuccess } from "./lib/utils";
 
 const URL = `${baseUrl}/api/list`;
 
-export const getTodoListService = async (): Promise<ITodo[]> => {
+export const getTaskListService = async (): Promise<ITask[]> => {
   const response = await fetch(URL, {
     method: "GET"
   });
@@ -21,7 +21,7 @@ export const getTodoListService = async (): Promise<ITodo[]> => {
   return body.data;
 };
 
-export const addTodoService = async (title: string): Promise<number> => {
+export const addTaskService = async (title: string): Promise<number> => {
   const response = await fetch(URL, {
     method: "POST",
     headers: {
@@ -30,14 +30,14 @@ export const addTodoService = async (title: string): Promise<number> => {
     body: JSON.stringify({ title })
   });
 
-  const body = (await response.json()) as ICreateTodoResponseBody;
+  const body = (await response.json()) as ICreateTaskResponseBody;
 
   checkSuccess(body);
 
   return body.id;
 };
 
-export const updateTodoService = async (
+export const updateTaskService = async (
   id: number,
   title: string
 ): Promise<void> => {
@@ -55,7 +55,7 @@ export const updateTodoService = async (
   checkSuccess(body);
 };
 
-export const deleteTodoService = async (id: number): Promise<void> => {
+export const deleteTaskService = async (id: number): Promise<void> => {
   const url = `${URL}/${id}`;
   const response = await fetch(url, {
     method: "DELETE"
