@@ -1,29 +1,29 @@
 import { ITask, IAction } from "../../types";
 
-export const ADD_TODO = "TODO_ADD";
-export const UPDATE_TODO = "UPDATE_TODO";
-export const DELETE_TODO = "DELETE_TODO";
-export const SET_TODOS = "SET_TODOS";
+export const ADD_TASK = "TASK_ADD";
+export const UPDATE_TASK = "UPDATE_TASK";
+export const DELETE_TASK = "DELETE_TASK";
+export const SET_TASKS = "SET_TASKS";
 export const FETCH_START = "FETCH_START";
 export const FETCH_FAILED = "FETCH_FAILED";
 
 export const addTask = (item: ITask): IAction<ITask> => ({
-  type: ADD_TODO,
+  type: ADD_TASK,
   payload: item
 });
 
 export const updateTask = (item: ITask): IAction<ITask> => ({
-  type: ADD_TODO,
+  type: ADD_TASK,
   payload: item
 });
 
 export const setTasks = (tasks: ITask[]): IAction<ITask[]> => ({
-  type: SET_TODOS,
+  type: SET_TASKS,
   payload: tasks
 });
 
 export const deleteTask = (id: number): IAction<number> => ({
-  type: DELETE_TODO,
+  type: DELETE_TASK,
   payload: id
 });
 

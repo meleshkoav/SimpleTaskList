@@ -2,10 +2,10 @@ import { IGlobalState, IAction, ITask } from "../../types";
 import {
   FETCH_START,
   FETCH_FAILED,
-  SET_TODOS,
-  ADD_TODO,
-  UPDATE_TODO,
-  DELETE_TODO
+  SET_TASKS,
+  ADD_TASK,
+  UPDATE_TASK,
+  DELETE_TASK
 } from "../actions";
 
 const initialState: IGlobalState = {
@@ -34,7 +34,7 @@ export const Tasks = (
       };
       break;
 
-    case SET_TODOS:
+    case SET_TASKS:
       state = {
         ...state,
         isLoading: false,
@@ -42,7 +42,7 @@ export const Tasks = (
       };
       break;
 
-    case ADD_TODO: {
+    case ADD_TASK: {
       state = {
         ...state,
         isLoading: false,
@@ -51,7 +51,7 @@ export const Tasks = (
       break;
     }
 
-    case UPDATE_TODO: {
+    case UPDATE_TASK: {
       const task = action.payload as ITask;
 
       state = {
@@ -62,7 +62,7 @@ export const Tasks = (
       break;
     }
 
-    case DELETE_TODO: {
+    case DELETE_TASK: {
       state = {
         ...state,
         isLoading: false,
