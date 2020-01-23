@@ -22,7 +22,7 @@ export const Tasks = (
 
   switch (action.type) {
     case FETCH_START:
-      state = { ...state, isLoading: true, error: null, tasks: [] };
+      state = { ...state, isLoading: true, error: null };
       break;
 
     case FETCH_FAILED:
@@ -40,9 +40,11 @@ export const Tasks = (
         isLoading: false,
         tasks: action.payload
       };
+      console.log(JSON.stringify(state));
       break;
 
     case ADD_TASK: {
+      console.log(JSON.stringify(state.tasks));
       state = {
         ...state,
         isLoading: false,

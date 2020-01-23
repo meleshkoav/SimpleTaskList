@@ -1,0 +1,27 @@
+.task-edit {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 10px;
+  align-content: flex-start;
+  justify-items: flex-start;
+
+  .editor {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 5px;
+  }
+
+  .header {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .h1 {
+      font-size: 27.34375px;
+    }
+  }
+}

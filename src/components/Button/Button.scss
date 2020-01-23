@@ -1,0 +1,24 @@
+.button {
+  font-family: Tahoma;
+  border-radius: 4px;
+  transition: all 0.1s ease-in-out;
+  padding: 0 10px;
+  border: 1px solid #f2f2f2;
+  background-color: #fff;
+  color: #1a1a1a;
+  line-height: 30px;
+  display: inline-block;
+  max-height: 32px;
+  min-width: 34px;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  &[data-type="green"] {
+    border-color: #62a60a;
+  }
+
+  &[data-type="red"] {
+    color: #ff1b00;
+    border-color: #ff1b00;
+  }
+}

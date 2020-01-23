@@ -1,0 +1,17 @@
+.task-list {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+
+  .header {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .h1 {
+      font-size: 27.34375px;
+    }
+  }
+}

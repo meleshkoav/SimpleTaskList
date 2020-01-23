@@ -1,0 +1,19 @@
+.row {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 100px auto 109px;
+
+  .row-buttons {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 10px;
+  }
+}
+
+.table-cell {
+  padding: 10px 15px;
+  max-height: 53px;
+  border-top: 1px solid #f2f2f2;
+  border-right: 1px solid #f2f2f2;
+}
